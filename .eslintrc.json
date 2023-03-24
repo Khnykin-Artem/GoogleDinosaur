@@ -1,16 +1,33 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "plugins": ["import"],
-    "extends": ["airbnb-base", "plugin:import/errors", "plugin:import/warnings"],
-    "overrides": [
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "rules": {
-    }
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "plugins": [
+    "import",
+    "optimize-regex",
+    "sonarjs",
+    "no-use-extend-native",
+    "promise",
+    "prettier"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "optimize-regex/all",
+    "plugin:sonarjs/recommended",
+    "plugin:no-use-extend-native/recommended",
+    "plugin:promise/recommended",
+    "prettier"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "quotes": ["error", "single"],
+    "prettier/prettier": "error"
+  }
 }
