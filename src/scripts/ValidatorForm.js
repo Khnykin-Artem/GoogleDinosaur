@@ -1,6 +1,4 @@
-"use strict"
-
-function ValidatorForm(form, validationSettings) {
+class ValidatorForm(form, validationSettings) {
 
 }
 
