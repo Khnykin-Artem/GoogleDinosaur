@@ -1,8 +1,6 @@
-'use strict';
-
 const jump = function (dino) {
   if (dino.classList.value !== 'jump') {
-    dino.classList.add("jump");
+    dino.classList.add('jump');
   }
 
   setTimeout(() => {

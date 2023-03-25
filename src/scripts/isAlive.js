@@ -1,5 +1,3 @@
-'use strict';
-
 const checkAlive = function (dino, cactus) {
   const isAlive = setInterval(() => {
     const dinoTop = parseInt(

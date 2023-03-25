@@ -1,7 +1,5 @@
-'use strict';
-
-import jump from './jump.js';
-import isAlive from './isAlive.js';
+import jump from './jump';
+import isAlive from './isAlive';
 
 const dino = document.getElementById('dino');
 const cactus = document.getElementById('cactus');

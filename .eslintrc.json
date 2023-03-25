@@ -15,7 +15,6 @@
     "airbnb-base",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "optimize-regex/all",
     "plugin:sonarjs/recommended",
     "plugin:no-use-extend-native/recommended",
     "plugin:promise/recommended",
