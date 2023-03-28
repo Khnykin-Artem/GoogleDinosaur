@@ -60,7 +60,7 @@ function scripts() {
 }
 
 /**
- * Watching scripts and styles changes
+ * * Watching scripts and styles changes
  * @return {void}
  */
 function watch() {
