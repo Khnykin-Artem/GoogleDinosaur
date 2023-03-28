@@ -11,7 +11,8 @@
     "prettier"
   ],
   "extends": [
-    "airbnb-base",
+    "eslint:recommended",
+    "google",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:sonarjs/recommended",

@@ -4,6 +4,9 @@ import gulpSass from 'gulp-sass';
 import { deleteAsync } from 'del';
 import rename from 'gulp-rename';
 import cleanCSS from 'gulp-clean-css';
+import babel from 'gulp-babel';
+import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
 
 const sass = gulpSass(dartSass);
 
@@ -37,13 +40,21 @@ function styles() {
 }
 
 function scripts() {
-  return gulp.src(paths.scripts.src);
+  return gulp
+    .src(paths.scripts.src, {
+      sourcemaps: true,
+    })
+    .pipe(babel())
+    .pipe(uglify())
+    .pipe(concat('main.min.js'))
+    .pipe(gulp.dest(paths.scripts.dest));
 }
 
 function watch() {
   gulp.watch(paths.styles.src, styles);
+  gulp.watch(paths.scripts.src, scripts);
 }
 
-const build = gulp.series(clean, styles, watch);
+const build = gulp.series(clean, gulp.parallel(scripts, styles), watch);
 
 export default build;
