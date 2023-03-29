@@ -1,4 +1,4 @@
-const checkAlive = function (dino, cactus) {
+function checkAlive(dino, cactus) {
   setInterval(() => {
     const dinoTop = parseInt(
       window.getComputedStyle(dino).getPropertyValue('top'),
@@ -13,6 +13,6 @@ const checkAlive = function (dino, cactus) {
       alert('Game over!');
     }
   }, 10);
-};
+}
 
 export default checkAlive;

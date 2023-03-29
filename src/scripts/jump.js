@@ -1,4 +1,4 @@
-const jump = function (dino) {
+function jump(dino) {
   if (dino.classList.value !== 'jump') {
     dino.classList.add('jump');
   }
@@ -6,6 +6,6 @@ const jump = function (dino) {
   setTimeout(() => {
     dino.classList.remove('jump');
   }, 300);
-};
+}
 
 export default jump;
