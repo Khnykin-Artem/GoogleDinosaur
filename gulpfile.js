@@ -21,16 +21,10 @@ const paths = {
   },
 };
 
-/**
- * @return {Promise}
- */
 async function clean() {
   await deleteAsync(['./dist']);
 }
 
-/**
- * @return {void}
- */
 function styles() {
   return gulp
     .src(paths.styles.src)
@@ -45,9 +39,6 @@ function styles() {
     .pipe(gulp.dest(paths.styles.dest));
 }
 
-/**
- * @return {void}
- */
 function scripts() {
   return gulp
     .src(paths.scripts.src, {
@@ -59,10 +50,6 @@ function scripts() {
     .pipe(gulp.dest(paths.scripts.dest));
 }
 
-/**
- * * Watching scripts and styles changes
- * @return {void}
- */
 function watch() {
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.scripts.src, scripts);

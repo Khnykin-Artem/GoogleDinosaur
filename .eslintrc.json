@@ -12,7 +12,7 @@
   ],
   "extends": [
     "eslint:recommended",
-    "google",
+    "airbnb-base",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:sonarjs/recommended",
@@ -28,6 +28,13 @@
   "rules": {
     "quotes": ["error", "single"],
     "prettier/prettier": "error",
-    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ]
   }
 }
