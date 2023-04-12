@@ -7,6 +7,7 @@ import cleanCSS from 'gulp-clean-css';
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
+import sourcemaps from 'gulp-sourcemaps';
 
 const sass = gulpSass(dartSass);
 
@@ -28,6 +29,7 @@ async function clean() {
 function styles() {
   return gulp
     .src(paths.styles.src)
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS())
     .pipe(
@@ -36,6 +38,7 @@ function styles() {
         suffix: '.min',
       })
     )
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.styles.dest));
 }
 
