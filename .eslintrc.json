@@ -42,6 +42,7 @@
       {
         "js": "always"
       }
-    ]
+    ],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   }
 }
