@@ -1,8 +1,8 @@
 import { deleteAsync } from 'del';
+import path from '../config/path.js';
 
-const { app } = global;
 function reset() {
-  return deleteAsync(app.path.clean);
+  return deleteAsync(path.clean);
 }
 
 export default reset;

@@ -1,5 +1,5 @@
-import jump from './jump';
-import isAlive from './checkAlive';
+import jump from './jump.js';
+import isAlive from './checkAlive.js';
 
 const dino = document.getElementById('dino');
 const cactus = document.getElementById('cactus');

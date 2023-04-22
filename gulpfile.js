@@ -1,12 +1,7 @@
 import gulp from 'gulp';
-import path from './gulp/config/path';
-import reset from './gulp/tasks/reset';
-import html from './gulp/tasks/html';
-
-global.app = {
-  path,
-  gulp,
-};
+import path from './gulp/config/path.js';
+import reset from './gulp/tasks/reset.js';
+import html from './gulp/tasks/html.js';
 
 function watcher() {
   gulp.watch(path.watch.html, html);
