@@ -5,9 +5,15 @@ const buildFolder = './dist';
 const srcFolder = './src';
 
 const path = {
-  src: {},
-  build: {},
-  watch: {},
+  src: {
+    html: `${srcFolder}/*.html`,
+  },
+  build: {
+    html: `${buildFolder}/`,
+  },
+  watch: {
+    html: `${srcFolder}/**/*.html`,
+  },
   clean: buildFolder,
   buildFolder,
   srcFolder,

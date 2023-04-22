@@ -24,6 +24,7 @@ indent_style = tab
 
 # 2 space indentation
 [*.{js, ts, css, html, json, scss}]
+charset = utf-8
 indent_style = space
 indent_size = 2
 
