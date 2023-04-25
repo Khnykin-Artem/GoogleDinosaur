@@ -15,6 +15,7 @@ function html() {
       )
     )
     .pipe(fileInclude())
+    .pipe(app.plugins.replace(/\/src\//g, '/dist/'))
     .pipe(webpHtmlNosvg())
     .pipe(
       versionNumber({
@@ -29,7 +30,8 @@ function html() {
         },
       })
     )
-    .pipe(app.gulp.dest(app.path.build.html));
+    .pipe(app.gulp.dest(app.path.build.html))
+    .pipe(app.plugins.browserSync.stream());
 }
 
 export default html;
