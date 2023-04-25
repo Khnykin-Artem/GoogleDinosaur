@@ -1,7 +1,8 @@
 import { deleteAsync } from 'del';
 
 function reset() {
-  return deleteAsync(global.app.path.clean);
+  const { app } = global;
+  return deleteAsync(app.path.clean);
 }
 
 export default reset;
