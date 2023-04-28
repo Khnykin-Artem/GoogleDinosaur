@@ -29,13 +29,6 @@
     "quotes": ["error", "single"],
     "prettier/prettier": "error",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "lines-between-class-members": [
-      "error",
-      "always",
-      {
-        "exceptAfterSingleLine": true
-      }
-    ],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "import/extensions": [
       "error",
