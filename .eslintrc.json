@@ -3,8 +3,23 @@
     "browser": true,
     "es2021": true
   },
-  "plugins": ["import", "sonarjs", "no-use-extend-native", "promise", "prettier"],
-  "extends": ["eslint:recommended", "airbnb-base", "plugin:import/errors", "plugin:import/warnings", "plugin:sonarjs/recommended", "plugin:no-use-extend-native/recommended", "plugin:promise/recommended", "prettier"],
+  "plugins": [
+    "import",
+    "sonarjs",
+    "no-use-extend-native",
+    "promise",
+    "prettier"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:sonarjs/recommended",
+    "plugin:no-use-extend-native/recommended",
+    "plugin:promise/recommended",
+    "prettier"
+  ],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
