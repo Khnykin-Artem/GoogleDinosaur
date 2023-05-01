@@ -8,14 +8,17 @@ const path = {
   src: {
     html: `${srcFolder}/*.html`,
     styles: `${srcFolder}/styles/style.scss`,
+    scripts: `${srcFolder}/scripts/main.js`,
   },
   build: {
     html: `${buildFolder}/`,
     css: `${buildFolder}/css/`,
+    js: `${buildFolder}/js/`,
   },
   watch: {
     html: `${srcFolder}/**/*.html`,
     styles: `${srcFolder}/styles/**/*.scss`,
+    scripts: `${srcFolder}/scripts/**/*.js`,
   },
   clean: buildFolder,
   buildFolder,
