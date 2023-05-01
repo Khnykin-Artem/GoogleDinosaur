@@ -9,4 +9,5 @@ const plugins = {
   notify,
   browserSync,
 };
+
 export default plugins;

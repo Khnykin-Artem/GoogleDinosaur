@@ -7,12 +7,15 @@ const srcFolder = './src';
 const path = {
   src: {
     html: `${srcFolder}/*.html`,
+    styles: `${srcFolder}/styles/style.scss`,
   },
   build: {
     html: `${buildFolder}/`,
+    css: `${buildFolder}/css/`,
   },
   watch: {
     html: `${srcFolder}/**/*.html`,
+    styles: `${srcFolder}/styles/**/*.scss`,
   },
   clean: buildFolder,
   buildFolder,

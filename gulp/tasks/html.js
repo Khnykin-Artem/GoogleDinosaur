@@ -15,7 +15,7 @@ function html() {
       )
     )
     .pipe(fileInclude())
-    .pipe(app.plugins.replace(/\/src\//g, '/dist/'))
+    .pipe(app.plugins.replace(/@images\//g, 'images/'))
     .pipe(webpHtmlNosvg())
     .pipe(
       versionNumber({

@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-@@include('html/head.html', {
-"title": "Settings"
-})
-<body>
-@@include('html/header.html', {})
-<main>
-  <div class="game-settings">
-    <form action="">
-      <input type="number" name="speed" id="speed" />
-      <input type="number" name="health-power" id="health-power" />
-    </form>
-  </div>
-</main>
-@@include('html/footer.html', {})
-</body>
+  @@include('html/head.html', { "title": "Settings" })
+  <body>
+    @@include('html/header.html', {})
+    <main>
+      <div class="game-settings">
+        <form action="">
+          <input type="number" name="speed" id="speed" />
+          <input type="number" name="health-power" id="health-power" />
+        </form>
+      </div>
+    </main>
+    @@include('html/footer.html', {})
+  </body>
 </html>
