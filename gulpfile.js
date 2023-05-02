@@ -6,6 +6,7 @@ import html from './gulp/tasks/html.js';
 import server from './gulp/tasks/server.js';
 import styles from './gulp/tasks/styles.js';
 import scripts from './gulp/tasks/scripts.js';
+import images from './gulp/tasks/images.js';
 
 global.app = {
   gulp,
@@ -17,9 +18,10 @@ function watcher() {
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.styles, styles);
   gulp.watch(path.watch.scripts, scripts);
+  gulp.watch(path.watch.images, images);
 }
 
-const mainTasks = gulp.parallel(html, styles, scripts);
+const mainTasks = gulp.parallel(html, styles, scripts, images);
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 gulp.task('default', dev);
