@@ -17,6 +17,7 @@ const path = {
     css: `${buildFolder}/css/`,
     js: `${buildFolder}/js/`,
     images: `${buildFolder}/images/`,
+    fonts: `${buildFolder}/fonts/`,
   },
   watch: {
     html: `${srcFolder}/**/*.html`,
