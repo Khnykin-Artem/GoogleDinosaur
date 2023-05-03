@@ -11,6 +11,8 @@ import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
 import svgSprive from './gulp/tasks/svgSprive.js';
 
 global.app = {
+  isBuild: process.argv.includes('--build'),
+  isDev: process.argv.includes('--dev'),
   gulp,
   path,
   plugins,
