@@ -9,6 +9,7 @@ import scripts from './gulp/tasks/scripts.js';
 import images from './gulp/tasks/images.js';
 import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
 import svgSprive from './gulp/tasks/svgSprive.js';
+import zip from './gulp/tasks/zip.js';
 
 global.app = {
   isBuild: process.argv.includes('--build'),
@@ -25,8 +26,6 @@ function watcher() {
   gulp.watch(path.watch.images, images);
 }
 
-export { svgSprive };
-
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 const mainTasks = gulp.series(
   fonts,
@@ -35,5 +34,8 @@ const mainTasks = gulp.series(
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
+const deployZIP = gulp.series(reset, mainTasks, zip);
 
 gulp.task('default', dev);
+
+export { svgSprive, build, deployZIP };
