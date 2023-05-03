@@ -12,7 +12,7 @@ function styles() {
   const { app } = global;
   return (
     app.gulp
-      .src(app.path.src.styles, { sourcemaps: true })
+      .src(app.path.src.styles, { sourcemaps: app.isDev })
       .pipe(
         app.plugins.plumber(
           app.plugins.notify.onError({
@@ -27,23 +27,29 @@ function styles() {
           outputStyle: 'expanded',
         })
       )
-      .pipe(groupCssMediaQueries())
+      .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
       .pipe(
-        webpCss({
-          webpClass: '.webp',
-          noWebpClass: '.no-webp',
-        })
+        app.plugins.if(
+          app.isBuild,
+          webpCss({
+            webpClass: '.webp',
+            noWebpClass: '.no-webp',
+          })
+        )
       )
       .pipe(
-        autoPrefixer({
-          grid: true,
-          overrideBrowserslist: ['last 3 versions'],
-          cascade: true,
-        })
+        app.plugins.if(
+          app.isBuild,
+          autoPrefixer({
+            grid: true,
+            overrideBrowserslist: ['last 3 versions'],
+            cascade: true,
+          })
+        )
       )
       // Раскомментировать если нужен не сжатый дубль файла стилей
       // .pipe(app.gulp.dest(app.path.build.css))
-      .pipe(cleanCss())
+      .pipe(app.plugins.if(app.isBuild, cleanCss()))
       .pipe(
         rename({
           extname: '.min.css',

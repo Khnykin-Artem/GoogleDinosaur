@@ -3,7 +3,7 @@ import webpackStream from 'webpack-stream';
 function scripts() {
   const { app } = global;
   return app.gulp
-    .src(app.path.src.scripts, { sourcemaps: true })
+    .src(app.path.src.scripts, { sourcemaps: app.isDev })
     .pipe(
       app.plugins.plumber(
         app.plugins.notify.onError({
@@ -14,7 +14,7 @@ function scripts() {
     )
     .pipe(
       webpackStream({
-        mode: 'development',
+        mode: app.isBuild ? 'production' : 'development',
         output: {
           filename: 'main.min.js',
         },

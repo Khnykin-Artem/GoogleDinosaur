@@ -12,7 +12,7 @@ import svgSprive from './gulp/tasks/svgSprive.js';
 
 global.app = {
   isBuild: process.argv.includes('--build'),
-  isDev: process.argv.includes('--dev'),
+  isDev: !process.argv.includes('--build'),
   gulp,
   path,
   plugins,
@@ -34,4 +34,6 @@ const mainTasks = gulp.series(
 );
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(reset, mainTasks);
+
 gulp.task('default', dev);
