@@ -5,8 +5,8 @@
   "type": "module",
   "main": "./dist/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp"
+    "svgSprive": "gulp svgSprive",
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,7 @@
     "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-sprite": "^2.0.3",
     "gulp-ttf2woff2": "^4.0.1",
     "gulp-uglify": "^3.0.2",
     "gulp-version-number": "^0.2.4",
