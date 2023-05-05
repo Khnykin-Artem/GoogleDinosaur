@@ -4,19 +4,21 @@
   @@include('html/head.html', { "title": "Main" })
 
   <body>
-    @@include('html/header.html', {})
-    <main>
-      <div class="game-stat">
-        <span class="stat-title">Счёт: </span>
-        <span class="stat-account" id="stat-account"></span>
-      </div>
+    <div class="wrapper">
+      @@include('html/header.html', {})
+      <main>
+        <div class="game-stat">
+          <span class="stat-title">Счёт: </span>
+          <span class="stat-account" id="stat-account"></span>
+        </div>
 
-      <div class="game">
-        <div id="dino"></div>
-        <div id="cactus"></div>
-      </div>
-      <img src="@images/download.webp" />
-    </main>
-    @@include('html/footer.html', {})
+        <div class="game">
+          <div id="dino"></div>
+          <div id="cactus"></div>
+        </div>
+      </main>
+      <img class="background" src="@images/background.webp">
+      @@include('html/footer.html', {})
+    </div>
   </body>
 </html>
